@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Additional custom styles */
+        .about-section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .about-section h2 {
+            margin-bottom: 40px;
+        }
+        .about-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #ddd;
+            margin: 0 auto 20px auto; /* Center the image and add margin below */
+        }
+        .about-text {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .projects-section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .projects-section h2 {
+            margin-bottom: 40px;
+        }
+        .card {
+            margin: 15px;
+        }
+        .skills-section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .skills-section h2 {
+            margin-bottom: 40px;
+        }
+        .certificates-section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+        .certificates-section h2 {
+            margin-bottom: 40px;
+        }
+        .contact-section {
+            background-color: #343a40;
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .contact-section h2 {
+            margin-bottom: 40px;
+        }
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        .contact-info i {
+            margin-right: 10px;
+        }
+        .social-icons {
+            margin-top: 30px;
+        }
+        .social-icons .btn {
+            background-color: #e83e8c;
+            border: none;
+            margin: 0 5px;
+        }
+        .social-icons .btn:hover {
+            background-color: #d6327d;
+        }
+    </style>
+</head>
+<body>
+    <!-- About Section -->
+    <section class="about-section">
+        <h2>About</h2>
+        <div class="about-img">
+            <img src="images/about/about.jpg" alt="Profile Image" class="img-fluid">
+        </div>
+        <div class="about-text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel dolor nisi. Phasellus in odio at odio fringilla dictum.</p>
+            <p>Quisque eu ex sit amet libero dictum mollis. Curabitur vitae felis vel ligula pulvinar pretium et in libero.</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section">
+        <h2>Projects</h2>
+        <div class="container">
+            <div class="row">
+                <!-- Project 1 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/projects/1.jpg" class="card-img-top" alt="Project 1 Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 1 - Drone path optimization for 5G servicing</h5>
+                            <p class="card-text">Developed a new clustering algorithm based on K-means to optimize drone trajectories for 5G servicing</p>
+                            <a href="https://www.linkedin.com/in/juan-sigman-zlatkes-ab9597206" target=”_blank” class="btn btn-primary">Blog Post</a>
+                            <a href="https://github.com/DrJuanchi/Clustering-Service-Area-of-Different-Flying-Base-Station-Located-at-the-same-Depot" target=”_blank” class="btn btn-secondary">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/projects/2.jpg" class="card-img-top" alt="Project 2 Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 2 - Temperature sensing</h5>
+                            <p class="card-text">Installed temperature sensors in batteries to detect potential faults</p>
+                            <a href="https://www.linkedin.com/in/juan-sigman-zlatkes-ab9597206" target=”_blank” class="btn btn-primary">Blog Post</a>
+                            <a href="https://github.com/DrJuanchi/Innovative-Temperature-Sensing-PCB-Design-and-Data-Collection" target=”_blank” class="btn btn-secondary">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/projects/3.jpg" class="card-img-top" alt="Project 3 Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 3</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel dolor nisi.</p>
+                            <a href="https://www.linkedin.com/in/juan-sigman-zlatkes-ab9597206" target=”_blank” class="btn btn-primary">Blog Post</a>
+                            <a href="https://www.linkedin.com/in/juan-sigman-zlatkes-ab9597206" target=”_blank” class="btn btn-secondary">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section">
+        <h2>Skills</h2>
+        <div class="container">
+            <div class="row">
+                <!-- Skill 1 -->
+                <div class="col-md-3 mb-4">
+                    <div class="card">
+                        <img src="images/skills/1.png" class="card-img-top" alt="Skill 1 Icon">
+                        <div class="card-body">
+                            <h5 class="card-title">Python</h5>
+                            <p class="card-text">Strong Python background focused on data handling and analysis</p>
+                            <a href="#" class="btn btn-primary">Link to course or bootcamp</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Skill 2 -->
+                <div class="col-md-3 mb-4">
+                    <div class="card">
+                        <img src="images/skills/2.png" class="card-img-top" alt="Skill 2 Icon">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Visualization</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel dolor nisi.</p>
+                            <a href="#" class="btn btn-primary">Link to course or bootcamp</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Skill 3 -->
+                <div class="col-md-3 mb-4">
+                    <div class="card">
+                        <img src="images/skills/3.png" class="card-img-top" alt="Skill 3 Icon">
+                        <div class="card-body">
+                            <h5 class="card-title">SQL</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel dolor nisi.</p>
+                            <a href="#" class="btn btn-primary">Link to course or bootcamp</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Skill 4 -->
+                <div class="col-md-3 mb-4">
+                    <div class="card">
+                        <img src="images/skills/4.png" class="card-img-top" alt="Skill 4 Icon">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Storytelling</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel dolor nisi.</p>
+                            <a href="#" class="btn btn-primary">Link to course or bootcamp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section class="certificates-section">
+        <h2>Certificates</h2>
+        <div class="container">
+            <div class="row justify-content-center">
+                <!-- Certificate Cards -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card">
+                        <img src="images/certificates/1.png" class="card-img-top" alt="Certificate 1">
+                        <div class="card-body">
+                            <h5 class="card-title">IBM Data Science Professional Certificate</h5>
+                            <p class="card-text">Awarded by IBM, obtained July 2024</p>
+                            <a href="#" class="btn btn-primary">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+                <!--Certificate 2-->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card">
+                        <img src="images/certificates/1.png" class="card-img-top" alt="Certificate 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Certificate 2</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel dolor nisi.</p>
+                            <a href="#" class="btn btn-primary">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat for each certificate card -->
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact Me Section -->
+    <section class="contact-section">
+        <h2>Contact Me</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto contact-info">
+                    <p><i class="fas fa-envelope"></i> example@example.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
+                </div>
+            </div>
+            <div class="row social-icons justify-content-center">
+                <div class="col-md-6 mx-auto">
+                    <a href="#" class="btn btn-lg btn-circle btn-pink" data-toggle="tooltip" data-placement="top" title="LinkedIn">
+                        <img src="icons/linkedin.png" alt="LinkedIn" class="social-icon">
+                    </a>
+                    <a href="#" class="btn btn-lg btn-circle btn-pink" data-toggle="tooltip" data-placement="top" title="Instagram">
+                        <img src="icons/twitter.png" alt="Instagram" class="social-icon">
+                    </a>
+                    <a href="#" class="btn btn-lg btn-circle btn-pink" data-toggle="tooltip" data-placement="top" title="GitHub">
+                        <img src="icons/github.png" alt="GitHub" class="social-icon">
+                    </a>
+                    <a href="#" class="btn btn-lg btn-circle btn-pink" data-toggle="tooltip" data-placement="top" title="Medium">
+                        <img src="icons/medium.png" alt="Medium" class="social-icon">
+                    </a>
+                    <a href="#" class="btn btn-lg btn-circle btn-pink" data-toggle="tooltip" data-placement="top" title="Kaggle">
+                        <img src="icons/youtube.png" alt="Kaggle" class="social-icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Tooltip initialization -->
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+</body>
+</html>
