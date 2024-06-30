@@ -2638,6 +2638,15 @@ input, select, textarea {
 			width: 100%;
 		}
 
+		.image.main.two {
+			display: block;
+			margin-top: 50px;
+			margin-bottom: 50px;
+			margin-left: auto;
+			margin-right: auto;
+			width: 80%;
+		}
+
 			.image.main:first-child {
 				margin-top: 0;
 			}
@@ -2945,7 +2954,7 @@ input, select, textarea {
 		}
 
 		header.major {
-			margin: 0 0 4rem 0;
+			margin: auto;
 			text-align: center;
 		}
 
