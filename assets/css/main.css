@@ -2638,6 +2638,14 @@ input, select, textarea {
 			width: 100%;
 		}
 
+		.image.main.achus {
+			width: 50%;
+			margin-right: auto;
+			margin-left: auto;
+			margin-top: 4rem;
+			margin-bottom: 4rem;
+		}
+
 		.image.main.two {
 			display: block;
 			margin-top: 50px;
