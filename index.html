@@ -1,108 +1,299 @@
 <!DOCTYPE html>
-<html lang="es"> <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Lista de Juanchi</title> <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom styles can be added here if needed */
-        body {
-            font-family: 'Inter', sans-serif; /* Using Inter font as recommended */
-        }
-        .gift-card {
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-        }
-        .gift-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-    </style>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>La Lista de Juanchi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* === COMPONENTES REUTILIZABLES === */
+    .regalo {
+      background-color: white;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+
+    .regalo:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .titulo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #0284c7;
+      margin-bottom: 0.5rem;
+    }
+
+    .categoria-surf .titulo {
+      color: #047857;
+    }
+
+    .descripcion {
+      font-size: 0.875rem;
+      color: #334155;
+      margin-bottom: 0.75rem;
+    }
+
+    .precio {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #10b981;
+      margin-bottom: 1rem;
+    }
+
+    .boton {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background-color: #0ea5e9;
+      color: white;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.15s ease-in-out;
+      text-decoration: none;
+    }
+
+    .boton:hover {
+      background-color: #0284c7;
+    }
+
+    .pie {
+      background-color: #f1f5f9;
+      border-top: 1px solid #e2e8f0;
+      padding: 1.5rem;
+    }
+
+    .pie-centrado {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.875rem;
+      font-style: italic;
+      color: #94a3b8;
+    }
+
+    /* === CATEGORÍAS === */
+    .categoria-surf {
+      background-color: #ecfdf5;
+      border-left: 6px solid #059669;
+    }
+
+    /* EJEMPLO NUEVA CATEGORÍA:
+    .categoria-tecnologia {
+      background-color: #eff6ff;
+      border-left: 6px solid #2563eb;
+    }
+
+    .categoria-tecnologia .titulo {
+      color: #1e40af;
+    }
+    */
+
+    /* === LEYENDA === */
+    .color-muestra {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      margin-right: 8px;
+      border-radius: 3px;
+      vertical-align: middle;
+    }
+
+    .color-surf {
+      background-color: #059669;
+    }
+
+    /* EJEMPLO NUEVO COLOR:
+    .color-tecnologia {
+      background-color: #2563eb;
+    }
+    */
+  </style>
 </head>
 <body class="bg-gradient-to-br from-slate-100 to-sky-100 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
 
-    <div class="container mx-auto max-w-4xl">
-        <header class="text-center mb-12">
-            <h1 class="text-4xl sm:text-5xl font-bold text-sky-700">La Lista de Juanchi</h1> <p class="text-lg text-slate-600 mt-2">Para cuando no sepan qué comprarle al Juanchi</p> </header>
+  <div class="container mx-auto max-w-4xl">
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+    <header class="text-center mb-12">
+      <h1 class="text-4xl sm:text-5xl font-bold text-sky-700">La Lista de Juanchi</h1>
+      <p class="text-lg text-slate-600 mt-2">Para cuando no sepan qué comprarle al Juanchi</p>
+    </header>
 
-            <div class="gift-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
-                <div class="p-6 flex-grow">
-                    <h2 class="text-2xl font-semibold text-sky-600 mb-2">Cool Headphones</h2>
-                    <p class="text-slate-700 text-sm mb-3">
-                        Noise-cancelling over-ear headphones for immersive music listening and focused work.
-                    </p>
-                    <p class="text-xl font-bold text-emerald-500 mb-4">~$150</p>
-                </div>
-                <div class="p-6 bg-slate-50 border-t border-slate-200">
-                    <a href="https://www.amazon.com/s?k=noise+cancelling+headphones"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="block w-full text-center bg-sky-500 hover:bg-sky-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-150 ease-in-out">
-                        Example Link (Amazon)
-                    </a>
-                </div>
-            </div>
-            <div class="gift-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
-                <div class="p-6 flex-grow">
-                    <h2 class="text-2xl font-semibold text-sky-600 mb-2">Smart Mug</h2>
-                    <p class="text-slate-700 text-sm mb-3">
-                        A temperature-controlled smart mug to keep my coffee or tea at the perfect temperature.
-                    </p>
-                    <p class="text-xl font-bold text-emerald-500 mb-4">~$100</p>
-                </div>
-                <div class="p-6 bg-slate-50 border-t border-slate-200">
-                    <a href="https://www.amazon.com/s?k=smart+mug"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="block w-full text-center bg-sky-500 hover:bg-sky-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-150 ease-in-out">
-                        Example Link (Amazon)
-                    </a>
-                </div>
-            </div>
-            <div class="gift-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
-                <div class="p-6 flex-grow">
-                    <h2 class="text-2xl font-semibold text-sky-600 mb-2">A Good Book</h2>
-                    <p class="text-slate-700 text-sm mb-3">
-                        A captivating science fiction novel or a non-fiction book on a fascinating topic. Surprise me!
-                    </p>
-                    <p class="text-xl font-bold text-emerald-500 mb-4">~$20-30</p>
-                </div>
-                <div class="p-6 bg-slate-50 border-t border-slate-200 h-[60px] flex items-center justify-center"> <p class="text-slate-400 text-sm italic">No specific link, any good one!</p>
-                </div>
-            </div>
-            <!--
-            To add a new gift, copy everything between these 'GIFT ITEM TEMPLATE' comments
-            and paste it above this comment block. Then, update the details.
+    <!-- =====================================
+         CÓMO AÑADIR REGALOS Y CATEGORÍAS
+    ====================================== -->
 
-            GIFT ITEM TEMPLATE: START
-            =========================
-            <div class="gift-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
-                <div class="p-6 flex-grow">
-                    <h2 class="text-2xl font-semibold text-sky-600 mb-2">Gift Name Here</h2>
-                    <p class="text-slate-700 text-sm mb-3">
-                        Short description of the gift goes here.
-                    </p>
-                    <p class="text-xl font-bold text-emerald-500 mb-4">Price (e.g., ~$50)</p>
-                </div>
-                <div class="p-6 bg-slate-50 border-t border-slate-200">
-                    <a href="YOUR_AMAZON_OR_EXAMPLE_LINK_HERE_IF_ANY"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="block w-full text-center bg-sky-500 hover:bg-sky-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-150 ease-in-out">
-                        Example Link
-                    </a>
-                    <!--
-                    <div class="h-[40px] flex items-center justify-center">
-                        <p class="text-slate-400 text-sm italic">No specific link needed.</p>
-                    </div>
-                </div>
-            </div>
-            =======================
-            GIFT ITEM TEMPLATE: END
-            -->
+    <!-- 🎁 AÑADIR UN NUEVO REGALO:
+    1. Copia cualquier bloque <div class="regalo"> dentro de la sección de regalos.
+    2. Si el regalo pertenece a una categoría (como surf), añade también la clase correspondiente:
+         <div class="regalo categoria-surf">
+    3. Cambia los textos:
+       - .titulo → título del regalo
+       - .descripcion → descripción corta
+       - .precio → precio estimado
+       - .pie → puede ser un <a> con clase .boton o un <div class="pie-centrado"> con texto
+    -->
 
-        </div> <footer class="text-center mt-16 mb-8">
-            <p class="text-slate-500 text-sm">¡Felices Regalos! ❤️</p> </footer>
+    <!-- 🏷️ AÑADIR UNA NUEVA CATEGORÍA:
+    1. En el <style> crea una clase como:
+         .categoria-loquesea {
+           background-color: #f0f0ff;
+           border-left: 6px solid #123456;
+         }
+         .categoria-loquesea .titulo {
+           color: #123456;
+         }
+    2. Usa esa clase en el div del regalo:
+         <div class="regalo categoria-loquesea">
 
-    </div> </body>
+    3. Añade una entrada en la leyenda (ver abajo).
+    -->
+
+    <!-- 🧾 AÑADIR A LA LEYENDA:
+    1. Dentro del <ul> de la leyenda, añade:
+         <li class="flex items-center">
+           <span class="color-muestra" style="background-color: #123456;"></span>
+           <span class="text-sm text-slate-700">Nombre de categoría</span>
+         </li>
+    -->
+
+    <!-- LEYENDA -->
+    <section class="mb-8 p-4 bg-white/70 backdrop-blur-sm rounded-lg shadow">
+      <h3 class="text-xl font-semibold text-sky-700 mb-3">Leyenda de Categorías:</h3>
+      <ul class="flex flex-wrap gap-x-6 gap-y-2">
+        <li class="flex items-center">
+          <span class="color-muestra color-surf"></span>
+          <span class="text-sm text-slate-700">Surf</span>
+        </li>
+        <!-- Añade aquí más entradas si creas nuevas categorías -->
+      </ul>
+    </section>
+
+    <!-- LISTA DE REGALOS -->
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+
+      <!-- TABLA DE SURF -->
+      <div class="regalo categoria-surf">
+        <div class="p-6 flex-grow">
+          <h2 class="titulo">Tabla de Surf!</h2>
+          <p class="descripcion">Regalo tremendo, solo para la más especial de las ocasiones.</p>
+          <p class="precio">Precio Variable</p>
+        </div>
+        <div class="pie pie-centrado">Consultar con el Juanchi!</div>
+      </div>
+
+      <!-- BOTELLA DE AGUA -->
+      <div class="regalo">
+        <div class="p-6 flex-grow">
+          <h2 class="titulo">Una buena botella de agua</h2>
+          <p class="descripcion">Para estar siempre hidratado, como un campeón.</p>
+          <p class="precio"></p>
+        </div>
+        <div class="pie pie-centrado">
+          No tengo ejemplo.
+        </div>
+      </div>
+
+      <!-- GRIPPAD -->
+      <div class="regalo categoria-surf">
+        <div class="p-6 flex-grow">
+          <h2 class="titulo">Surf Grip Pad</h2>
+          <p class="descripcion">Algo para ponerle a la tabla de surf para no resbalarme</p>
+          <p class="precio">~$50€</p>
+        </div>
+        <div class="pie">
+          <a href="https://pukassurfshop.com/collections/surf-grips-traction-pads/products/fcs-julian-black-charcoal" target="_blank" rel="noopener noreferrer" class="boton">
+            Ver un ejemplo :)
+          </a>
+        </div>
+      </div>
+
+      <!-- Para Apoyar la Tabla en el Suelo de Mi Cuarto -->
+      <div class="regalo categoria-surf">
+        <div class="p-6 flex-grow">
+          <h2 class="titulo">Algo para apoyar la tabla en el suelo de mi cuarto</h2>
+          <p class="descripcion">Tipo un stand para apoyar la tabla en el suelo de mi cuarto</p>
+          <p class="precio"></p>
+        </div>
+        <div class="pie pie-centrado">
+          No tengo ejemplo
+        </div>
+      </div>
+
+      <!-- MAYA -->
+       <div class="regalo">
+        <div class="p-6 flex-grow">
+          <h2 class="titulo">Maya de Natación</h2>
+          <p class="descripcion">Una maya apretadita pero que llegue hasta medio muslo</p>
+          <p class="precio"></p>
+        </div>
+        <div class="pie pie-centrado">
+          No tengo ejemplo
+        </div>
+      </div>
+      
+      <!-- GOPRO -->
+      <div class="regalo categoria-surf">
+        <div class="p-6 flex-grow">
+          <h2 class="titulo">GoPro</h2>
+          <p class="descripcion">Una GoPro para poder gramarme haciendo surf super bien</p>
+          <p class="precio"></p>
+        </div>
+        <div class="pie pie-centrado">
+          No tengo ejemplo
+        </div>
+      </div>
+
+      <!-- PARA SACAR LA CERA -->
+      <div class="regalo categoria-surf">
+        <div class="p-6 flex-grow">
+          <h2 class="titulo">Peine de Cera</h2>
+          <p class="descripcion">Una cosa para sacar la cera de la tabla de surf</p>
+          <p class="precio">~3€</p>
+        </div>
+        <div class="pie">
+          <a href="https://www.temu.com/ul/kuiper/un9.html?subj=coupon-un&_bg_fs=1&_p_jump_id=895&_x_vst_scene=adg&goods_id=601099750859677&sku_id=17593133822446&adg_ctx=a-9bf34320~c-a491aed4~f-264fb821&_x_ads_sub_channel=shopping&_p_rfs=1&_x_ns_prz_type=-1&_x_ns_sku_id=17593133822446&_x_ns_gid=601099750859677&mrk_rec=1&_x_ads_channel=google&_x_gmc_account=742367270&_x_login_type=Google&_x_ads_account=4438999299&_x_ads_set=20753697067&_x_ads_id=152642548022&_x_ads_creative_id=679839272786&_x_ns_source=g&_x_ns_gclid=EAIaIQobChMItpzv_p7BjQMVwK-DBx2PEhVJEAQYASABEgIq1PD_BwE&_x_ns_placement=&_x_ns_match_type=&_x_ns_ad_position=&_x_ns_product_id=742367270-en-17593133822446&_x_ns_target=&_x_ns_devicemodel=&_x_ns_wbraid=CkAKCAjw_8rBBhBeEjAACOTdWPRAvG_irBzWF-RKUn-DP73lWIyr1iUEfIj1UJOoJdezb5re0Y5NoJKmz-EaArY3&_x_ns_gbraid=0AAAAAo4mICG8t0GeUSY7bf9uUXaNSNkSd&_x_ns_targetid=pla-297852453264&gad_source=1&gad_campaignid=20753697067&gbraid=0AAAAAo4mICG8t0GeUSY7bf9uUXaNSNkSd&gclid=EAIaIQobChMItpzv_p7BjQMVwK-DBx2PEhVJEAQYASABEgIq1PD_BwE&refer_page_name=kuiper&refer_page_id=13554_1748266173004_3gjekylsbb&refer_page_sn=13554&_x_sessn_id=33lm0qzrj0" target="_blank" rel="noopener noreferrer" class="boton">
+            Ver un ejemplo :)
+          </a>
+        </div>
+      </div>
+
+      <!-- NEOPRENO DE INVIERNO -->
+       <div class="regalo categoria-surf">
+        <div class="p-6 flex-grow">
+          <h2 class="titulo">Neopreno de Invierno</h2>
+          <p class="descripcion">Para que no se me hiele el cuerpo si quiero ir a algún lugar más frío</p>
+          <p class="precio">Precio Variable</p>
+        </div>
+        <div class="pie pie-centrado">Consultar con el Juanchi!</div>
+      </div>
+
+
+      <!-- Puedes seguir añadiendo más regalos aquí -->
+    </section>
+
+    <footer class="text-center mt-16 mb-8">
+      <p class="text-slate-500 text-sm">¡Felices Regalos! ❤️</p>
+    </footer>
+
+  </div>
+</body>
 </html>
+
+<!--
+ Lista mía:
+              - Surf:
+                - Neopreno de invierno
+-->
+
