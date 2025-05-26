@@ -1,128 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>La Lista del Juanchi</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #4caf50;
-      color: white;
-      text-align: center;
-      padding: 1rem 0;
-    }
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    .note {
-      font-size: 0.9rem;
-      color: #555;
-      margin-top: 0.5rem;
-      text-align: center;
-    }
-    .gift-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-    .gift-item {
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 1rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .gift-item h3 {
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
-    }
-    .gift-item p {
-      margin: 0.4rem 0;
-      flex-grow: 1;
-    }
-    .price {
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
-    .action {
-      margin-top: 1rem;
-      text-align: right;
-    }
-    .action a {
-      text-decoration: none;
-      color: white;
-      background: #4caf50;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      transition: background 0.3s;
-    }
-    .action a:hover {
-      background: #45a049;
-    }
-  </style>
+<html lang="es"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Lista de Juanchi</title> <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles can be added here if needed */
+        body {
+            font-family: 'Inter', sans-serif; /* Using Inter font as recommended */
+        }
+        .gift-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .gift-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <h1>La Lista del Juanchi</h1>
-    <p class="note">Para cuando no sepan qué comprarle al Juanchi. Precios aproximados. Algunos regalos pueden tener enlace a Amazon.</p>
-  </header>
-  <div class="container">
-    <div class="gift-grid" id="giftGrid">
-      <!-- Gift items will go here -->
-      <div class="gift-item">
-        <!-- ITEM 1 - TOROTODO -->>
-        <h3>Wireless Noise-Cancelling Headphones</h3>
-        <p>High-quality over-ear headphones with active noise cancellation and long battery life.</p>
-        <p class="price">~ $299.99</p>
-        <div class="action">
-          <a href="https://www.amazon.com/example-headphones" target="_blank">Ver en Amazon</a>
-        </div>
-      </div>
-        <!-- ITEM 2 - TOROTODO -->
-      <div class="gift-item">
-        <h3>Smart LED Light Strip</h3>
-        <p>Color-changing LED light strip with app control and music sync feature for ambiance lighting.</p>
-        <p class="price">~ $49.99</p>
-        <!-- No link provided for this item -->
-      </div>
-        <!-- ITEM 1 - TOROTODO -->
-    </div>
-  </div>
-  <script>
-    // Example: JS to dynamically add more gifts
-    const gifts = [
-      // Add new gifts as objects here
-      // { name: 'Example Gift', desc: 'Description here', price: '~ $X.XX', link: 'https://...' }
-    ];
-    const grid = document.getElementById('giftGrid');
-    function addGifts(items) {
-      items.forEach(g => {
-        const div = document.createElement('div');
-        div.className = 'gift-item';
-        div.innerHTML = `
-          <h3>${g.name}</h3>
-          <p>${g.desc}</p>
-          <p class=\"price\">${g.price}</p>
-          ${g.link ? `<div class=\"action\"><a href=\"${g.link}\" target=\"_blank\">Ver en Amazon</a></div>` : '<!-- Sin enlace -->'}
-        `;
-        grid.appendChild(div);
-      });
-    }
-    // Uncomment to test dynamic addition
-    // addGifts(gifts);
-  </script>
-</body>
+<body class="bg-gradient-to-br from-slate-100 to-sky-100 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+
+    <div class="container mx-auto max-w-4xl">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl sm:text-5xl font-bold text-sky-700">La Lista de Juanchi</h1> <p class="text-lg text-slate-600 mt-2">Para cuando no sepan qué comprarle al Juanchi</p> </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+
+            <div class="gift-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
+                <div class="p-6 flex-grow">
+                    <h2 class="text-2xl font-semibold text-sky-600 mb-2">Cool Headphones</h2>
+                    <p class="text-slate-700 text-sm mb-3">
+                        Noise-cancelling over-ear headphones for immersive music listening and focused work.
+                    </p>
+                    <p class="text-xl font-bold text-emerald-500 mb-4">~$150</p>
+                </div>
+                <div class="p-6 bg-slate-50 border-t border-slate-200">
+                    <a href="https://www.amazon.com/s?k=noise+cancelling+headphones"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="block w-full text-center bg-sky-500 hover:bg-sky-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-150 ease-in-out">
+                        Example Link (Amazon)
+                    </a>
+                </div>
+            </div>
+            <div class="gift-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
+                <div class="p-6 flex-grow">
+                    <h2 class="text-2xl font-semibold text-sky-600 mb-2">Smart Mug</h2>
+                    <p class="text-slate-700 text-sm mb-3">
+                        A temperature-controlled smart mug to keep my coffee or tea at the perfect temperature.
+                    </p>
+                    <p class="text-xl font-bold text-emerald-500 mb-4">~$100</p>
+                </div>
+                <div class="p-6 bg-slate-50 border-t border-slate-200">
+                    <a href="https://www.amazon.com/s?k=smart+mug"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="block w-full text-center bg-sky-500 hover:bg-sky-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-150 ease-in-out">
+                        Example Link (Amazon)
+                    </a>
+                </div>
+            </div>
+            <div class="gift-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
+                <div class="p-6 flex-grow">
+                    <h2 class="text-2xl font-semibold text-sky-600 mb-2">A Good Book</h2>
+                    <p class="text-slate-700 text-sm mb-3">
+                        A captivating science fiction novel or a non-fiction book on a fascinating topic. Surprise me!
+                    </p>
+                    <p class="text-xl font-bold text-emerald-500 mb-4">~$20-30</p>
+                </div>
+                <div class="p-6 bg-slate-50 border-t border-slate-200 h-[60px] flex items-center justify-center"> <p class="text-slate-400 text-sm italic">No specific link, any good one!</p>
+                </div>
+            </div>
+            <!--
+            To add a new gift, copy everything between these 'GIFT ITEM TEMPLATE' comments
+            and paste it above this comment block. Then, update the details.
+
+            GIFT ITEM TEMPLATE: START
+            =========================
+            <div class="gift-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
+                <div class="p-6 flex-grow">
+                    <h2 class="text-2xl font-semibold text-sky-600 mb-2">Gift Name Here</h2>
+                    <p class="text-slate-700 text-sm mb-3">
+                        Short description of the gift goes here.
+                    </p>
+                    <p class="text-xl font-bold text-emerald-500 mb-4">Price (e.g., ~$50)</p>
+                </div>
+                <div class="p-6 bg-slate-50 border-t border-slate-200">
+                    <a href="YOUR_AMAZON_OR_EXAMPLE_LINK_HERE_IF_ANY"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="block w-full text-center bg-sky-500 hover:bg-sky-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-150 ease-in-out">
+                        Example Link
+                    </a>
+                    <!--
+                    <div class="h-[40px] flex items-center justify-center">
+                        <p class="text-slate-400 text-sm italic">No specific link needed.</p>
+                    </div>
+                    -->
+                </div>
+            </div>
+            =======================
+            GIFT ITEM TEMPLATE: END
+            -->
+
+        </div> <footer class="text-center mt-16 mb-8">
+            <p class="text-slate-500 text-sm">¡Felices Regalos! ❤️</p> </footer>
+
+    </div> </body>
 </html>
